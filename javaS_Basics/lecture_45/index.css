@@ -1,0 +1,16 @@
+html , body{
+    width: 100%;
+    height: 100%;
+
+}
+.yellow{
+    background-color: yellow;
+    
+}
+.red{
+    background-color: red;
+    color: whitesmoke;
+}
+.text-black{
+    color: black;
+}

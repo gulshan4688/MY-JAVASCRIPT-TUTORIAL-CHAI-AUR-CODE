@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bind</title>
+</head>
+
+<body>
+    <button>button clicked</button>
+</body>
+<script>
+    class react {
+        constructor() {
+            this.library = "react"
+            this.server = "https://localhost:300"
+            // requirement
+            document.querySelector('button').addEventListener('click', this.handle.bind(this));   // here we used bind keyword to bind this keyword to which this was refering like here this was refering to the button becoz we were cliking on the button 
+        }
+
+        handle() {
+            console.log("button clicked");
+            console.log(this);
+        }
+    }
+    const app = new react()
+</script>
+
+</html>

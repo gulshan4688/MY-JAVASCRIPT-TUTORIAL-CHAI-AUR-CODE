@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>async programming</title>
+</head>
+
+<body style="background-color: #212121; color: aliceblue;">
+    <h1>chai aur code</h1>
+    <button id="stop">stop</button>
+    <script>
+        // settimeout -performs a single operation after a fixed time 
+        // place of function in setTimeOut we can declare it outside it and then can pass the refrence of that function
+        // for eg+++++++++++++++++++
+
+        const func = function () {
+            console.log("mani");
+        } // fucntion delcared 
+        // and not called just passed the refrence 
+        setTimeout(func, 3000)
+
+        // now we have to change the chai aur code text using setTimeout
+        const changeText = function () {
+            document.querySelector('h1').innerHTML = "mani is photographer"
+        }
+
+        // there may be some situtation where we need to stop sone settineouts
+        // thats why we use clearTimeout
+        const changeMe = setTimeout(changeText, 2000);
+        // now cleartimeout can not be used aise hi we need any evnet
+        // so we will used an event click on stop button
+
+        document.querySelector('#stop').addEventListener('click', function () {
+            clearTimeout(changeMe);
+            console.log("stopped");
+        }
+        )
+    </script>
+
+</body>
+
+</html>

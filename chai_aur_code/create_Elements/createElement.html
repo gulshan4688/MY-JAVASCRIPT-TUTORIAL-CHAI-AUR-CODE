@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>create element | chai aur code </title>
+</head>
+
+<body style="background-color: #212121; color: white;">
+    <script>
+        // first we create an element with a variable assigned to it 
+        const div = document.createElement('div')
+        // can check by printing it
+        console.log(div);
+        // give it a className
+        div.className = "main"
+        // give it a id, for some reason we have used a function below
+        div.id = Math.floor(Math.random() * 10 + 1);     // we can give id names also 
+        // we can also set any attribute and its value 
+        div.setAttribute("title", "muskuraye")
+        // style them in what properties we need 
+        div.style.backgroundColor = "green"
+
+        // now heres comes the main part, "how to add text "
+         // 1-->> way is directly just do innerText
+        div.innerText = "this is a text\n"
+        // 2.--->> second is to use a variable and then append it to the body 
+        // both are correct at their places
+
+        // with  help of textNode and then append it to the div
+        const addText = document.createTextNode("this is node text")
+        div.appendChild(addText);
+
+        // +++++++++++++++++++++++++++++++++
+        // now the final and most important part of this process is to attach all
+        // create and mainpulated part to the browser by body.appendChild command 
+        // without this no changes will be applied to the broweser
+        document.body.appendChild(div)
+    </script>
+</body>
+
+</html>

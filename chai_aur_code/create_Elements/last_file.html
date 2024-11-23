@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chai aur code</title>
+</head>
+
+<body style="background-color: #212121; color: white;">
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+    <script>
+        function addLanguage(langName) {
+            // create an element 
+            const li = document.createElement('li')
+            // add innerhtml like this below because we will get this from argument passed 
+            li.innerHTML = `${langName}`;
+            // append it after select in which class we want to append
+            document.querySelector('.language').appendChild(li)
+
+        }
+        addLanguage("python");
+        addLanguage("golang");
+        // the problem with this method is that it traverse every time we call 
+        // it and append at the last 
+        // in this case there is only one list so no problem but what about when 
+        // lakhs of list se isko guzar ke jana hoga 
+
+
+        // now we will use more optimized way of adding an element
+        function optiWayAddLang(langName) {
+            const li = document.createElement('li')
+            // created an element
+            // in that element we want to append oour created textnode
+            li.appendChild(document.createTextNode(langName))
+            // now select the query and append the child li 
+            document.querySelector('.language').appendChild(li);
+
+        }
+        optiWayAddLang("cplusplus")
+
+        // ++++++NOTE:+++++++
+        // whenever we are using innerHTML than this approch may not be optimized
+
+
+        //  EDIT------------->>
+        const lang2 = document.querySelector('li:nth-child(2)');
+        // editList.innerHTML = 'Mojo'   // this is not so optimized way 
+        // second approach 
+
+        // above we select the li required and change its innerHTML
+        // but below we created a whole new element and repalced with lang2
+
+        const newLi = document.createElement('li');
+        newLi.textContent = "MOJO";
+        lang2.replaceWith(newLi);
+
+        //one MORE EDIT
+        const firstLang = document.querySelector('li:first-child');
+        firstLang.outerHTML = '<li>typescript</li>'
+        // remove
+        const lastLang = document.querySelector('li:last-child');
+        lastLang.remove()
+
+    </script>
+</body>
+
+</html>

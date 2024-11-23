@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Card</title>
+    <style>
+        .card {
+            border: 1px solid #dc5252;
+            border-radius: 8px;
+            padding: 16px;
+            margin: 16px;
+            max-width: 300px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
+            font-family: Arial, sans-serif;
+            background: linear-gradient(145deg, #ffffff, #932020);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 0 12px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .card h2 {
+            margin-top: 0;
+        }
+
+        .card p {
+            margin: 8px 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card">
+        <h2>John Doe</h2>
+        <p><strong>Roll No:</strong> 123456</p>
+        <p><strong>City:</strong> New York</p>
+        <p><strong>College:</strong> ABC University</p>
+    </div>
+
+</body>
+
+</html>

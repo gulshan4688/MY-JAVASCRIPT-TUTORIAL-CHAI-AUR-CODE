@@ -1,0 +1,16 @@
+hmtl ,body{
+    height: 100%;
+    width: 100%;
+}
+*{
+    padding: 0px;
+    margin: 0px;
+}
+nav{
+    display: flex;
+    background-color: antiquewhite;
+}
+li{
+    list-style: none;
+    padding: 0px 34px ;
+}
